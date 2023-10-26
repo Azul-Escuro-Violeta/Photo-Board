@@ -1,57 +1,197 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import {StyleSheet, Text, TextInput, View, Image, SafeAreaView, TouchableOpacity} from 'react-native';
+import logo from './assets/images/logo_.png';
+import {useFonts} from 'expo-font'
+import { Entypo } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons'; 
 
-export default function App() {
+
+
+export default function Login() {
+  
+  const [fontsLoaded] = useFonts({
+    'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
+    'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf')
+  })
+  if(!fontsLoaded){
+    return undefined;
+  }
+
+
   return (
-    <View style={styles.container}>
-      <View style={styles.container_text}>
-        <Text style={styles.text}>Bem Vindo!</Text>
+    <>
+    <StatusBar style="auto"/>
+    <SafeAreaView style={styles.viewp}>
+      <View style={styles.main_container}>
+        <View style={styles.top}>
+          <Image source={logo} style={styles.logo} 
+          resizeMode="contain"
+          />
+        </View>
+        <View style={styles.bottom}>
+          <View style={styles.bottom_content}>
+            <View style={styles.welcome_text_container}>
+              <Text style={styles.welcome_text}>Bem Vindo!</Text>
+            </View>
+            <View style={styles.container_inputs}>
+              <View style={styles.input_container}>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Email"
+                  placeholderTextColor="#878787"
+                />
+                <Entypo name="mail" size={24} color="#878787" /> 
+              </View>
+              <View style={styles.input_password}>
+                <View style={styles.input_container}>
+                  <TextInput
+                    style={styles.input}
+                    placeholder="Senha"
+                    placeholderTextColor="#878787"
+                    secureTextEntry={true}
+                  />
+                  <Ionicons name="eye-off" size={24} color="#878787" />
+                </View>
+                <View style={styles.password_text_container}>
+                  <Text style={styles.forgot_my_password}>Esqueci minha senha</Text>
+                </View>
+              </View>
+            </View>
+            <View style={styles.submit_area}>
+              <TouchableOpacity
+                style={styles.button}
+                underlayColor="lightblue" // Cor de destaque quando pressionado
+              >
+                <Text style={styles.submitText}>LOGIN</Text>
+              </TouchableOpacity>
+              <Text style={styles.submitText}>SIGN UP</Text>
+            </View>
+          </View>
+        </View>
+
       </View>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Senha"
-      />
-      <StatusBar style="auto" />
-    </View>
-  );
+    </SafeAreaView>
+    </>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    fontSize: 20,
-    flex: 1,
+
+  viewp: {
     backgroundColor: '#1E1E1E',
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%'
+  },
+
+  main_container: {
+    height: "100%",
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  },
+
+  top: {
+    width: '85%',
+    flex: 1, 
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  logo: {
+    resizeMode: 'contain',
+    width: '85%',
+  },
+
+  bottom: {
+    flex: 3,
+    width: '100%',
+    backgroundColor: '#297447',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  bottom_content: {
+    flex: 1,
+    width: '85%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  container_inputs: {
+    width: '100%',
+    alignItems: 'center',
   },
   
-  container_text: {
-    width: '70%'
+
+  containerImage: {
+    flex: 1,
+    resizeMode: 'cover',
   },
 
-  text: {
+  welcome_text_container: {
+    width: '100%',
+
+  },
+
+  welcome_text: {
     color: 'white',
-    marginBottom: 10,
-    fontSize: '30px',
-
+    marginLeft: 20,
+    marginTop: 30,
+    fontSize: 34,
+    fontFamily:"Poppins-Bold",
   },
 
-  input: {
+  input_container: {
+    flexDirection: 'row',
     alignItems: 'center',
-    width: '70%',
+    width: 300,
+    height: 50,
     justifyContent: 'center',
-    backgroundColor: 'white',
-    borderRadius: 10,
+    backgroundColor: '#D9D9D9',
+    borderRadius: 40,
     paddingTop: 10,
     paddingBottom: 10,
     paddingLeft: 20,
     paddingRight: 20,
     marginBottom: 20,
   },
+
+  input: {
+    width: '90%',
+    height: 50,
+    fontSize: 16,
+  },
+
+  password_text_container: {
+    alignItems: 'flex-end',
+  },
+
+  forgot_my_password: {
+    color: 'white',
+    fontSize: 14,
+  },
+
+  submit_area: {
+    width: '100%',
+    alignItems: 'center',
+  },
+
+  button: {
+    width: 300,
+    height: 60,
+    paddingTop: 15,
+    paddingBottom: 15,
+    borderRadius: 15,
+    backgroundColor: '#1E1E1E',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+  },
+
+  submitText: {
+    color: 'white',
+    fontFamily: 'Poppins-Bold'
+  }
 
 });
