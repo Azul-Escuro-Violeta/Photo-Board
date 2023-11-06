@@ -11,7 +11,8 @@ export default function Login() {
 
   const [fontsLoaded] = useFonts({
     'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
-    'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf')
+    'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
+    'Poppins-Medium': require('./assets/fonts/Poppins-Medium.ttf')
   })
 
   if (!fontsLoaded) {
@@ -66,8 +67,11 @@ export default function Login() {
                 <TouchableOpacity
                   style={styles.button}
                   underlayColor="lightblue"
+                  onPress={() => navigation.navigate('Menu')}
                 >
-                  <Text style={styles.submitText}>LOGIN</Text>
+                  <Text 
+                  style={styles.submitText}>
+                    LOGIN</Text>
                 </TouchableOpacity>
                 <Text
                   style={styles.signupText}
@@ -116,6 +120,8 @@ const styles = StyleSheet.create({
         flex: 3,
         width: '100%',
         backgroundColor: '#297447',
+        borderTopLeftRadius: 45,
+        borderTopRightRadius: 45,
         justifyContent: 'space-between',
         alignItems: 'center',
       },
@@ -139,6 +145,7 @@ const styles = StyleSheet.create({
       },
     
       welcome_text_container: {
+        marginTop: 20,
         width: '100%',
     
       },
@@ -177,6 +184,9 @@ const styles = StyleSheet.create({
       },
     
       forgot_my_password: {
+        flexDirection: 'row',
+        textAlign: 'right',
+        width: '90%',
         color: 'white',
         fontSize: 14,
       },
@@ -201,6 +211,10 @@ const styles = StyleSheet.create({
       submitText: {
         color: 'white',
         fontFamily: 'Poppins-Bold'
+      },
+
+      signupText: {
+        marginBottom: 30,
       }
     
     });

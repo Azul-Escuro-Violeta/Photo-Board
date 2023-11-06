@@ -13,6 +13,7 @@ export default function Signup() {
   const [fontsLoaded] = useFonts({
     'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
     'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
+    'Poppins-Medium': require('./assets/fonts/Poppins-Medium.ttf')
   });
 
   if (!fontsLoaded) {
@@ -25,12 +26,11 @@ export default function Signup() {
       <SafeAreaView style={styles.viewp}>
         <View style={styles.main_container}>
           <View style={styles.top}>
-            <Image source={logo} style={styles.logo} resizeMode="contain" />
+            <Text style={styles.vamos_comecar}>Vamos Começar?</Text>
           </View>
           <View style={styles.bottom}>
             <View style={styles.bottom_content}>
               <View style={styles.welcome_text_container}>
-                <Text style={styles.welcome_text}>Crie uma conta</Text>
               </View>
               <View style={styles.container_inputs}>
                 <View style={styles.input_container}>
@@ -39,6 +39,7 @@ export default function Signup() {
                     placeholder="Nome"
                     placeholderTextColor="#878787"
                   />
+                  <Ionicons name="person" size={24} color="#878787" />
                 </View>
                 <View style={styles.input_container}>
                   <TextInput
@@ -118,6 +119,8 @@ const styles = StyleSheet.create({
     flex: 3,
     width: '100%',
     backgroundColor: '#297447',
+    borderTopLeftRadius: 45,
+    borderTopRightRadius: 45,
     justifyContent: 'space-between',
     alignItems: 'center',
   },
@@ -140,6 +143,14 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
 
+  vamos_comecar: {
+    alignItems: 'center',
+    fontSize: 32,
+    justifyContent: 'center',
+    fontFamily:"Poppins-Bold",
+    color: 'white',
+  },
+
   welcome_text_container: {
     width: '100%',
 
@@ -149,8 +160,9 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: 20,
     marginTop: 30,
-    fontSize: 34,
+    fontSize: 32,
     fontFamily:"Poppins-Bold",
+    textAlign: 'center'
   },
 
   input_container: {
@@ -203,6 +215,10 @@ const styles = StyleSheet.create({
   submitText: {
     color: 'white',
     fontFamily: 'Poppins-Bold'
+  },
+
+  signupText: {
+    marginBottom: 30,
   }
 
 });
