@@ -2,13 +2,15 @@ import React from 'react';
 import {Text, View, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
 import {AntDesign} from '@expo/vector-icons'; 
 import {useFonts} from 'expo-font';
+import Header from '../../components/Header/index.js'
+import { useNavigation } from '@react-navigation/native';
 
 export default function Menu() {
-
+  const navigation = useNavigation();
   const [fontsLoaded] = useFonts({
-    'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
-    'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
-    'Poppins-Medium': require('./assets/fonts/Poppins-Medium.ttf')
+    'Poppins-Regular': require('../../fonts/Poppins-Regular.ttf'),
+    'Poppins-Bold': require('../../fonts/Poppins-Bold.ttf'),
+    'Poppins-Medium': require('../../fonts/Poppins-Medium.ttf')
   });
 
   if (!fontsLoaded) {
@@ -16,6 +18,8 @@ export default function Menu() {
   }
 
   return (
+    <>
+    <Header/>
     <View style={styles.container}>
       <TouchableOpacity
       style={styles.calendar_button}
@@ -26,6 +30,7 @@ export default function Menu() {
         <AntDesign name="right" size={24} color="white" />
       </TouchableOpacity>
     </View>
+    </>
   );
 }
 

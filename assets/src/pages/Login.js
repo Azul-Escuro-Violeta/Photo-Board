@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TextInput, View, Image, SafeAreaView, TouchableOpacity } from 'react-native';
-import logo from './assets/images/logo_.png';
+import logo from '../../images/logo_.png';
+import Header from '../../components/Header/index.js'
 import { useFonts } from 'expo-font';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,9 +11,9 @@ export default function Login() {
   const navigation = useNavigation(); // Obtém a instância de navegação
 
   const [fontsLoaded] = useFonts({
-    'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
-    'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
-    'Poppins-Medium': require('./assets/fonts/Poppins-Medium.ttf')
+    'Poppins-Regular': require('../../fonts/Poppins-Regular.ttf'),
+    'Poppins-Bold': require('../../fonts/Poppins-Bold.ttf'),
+    'Poppins-Medium': require('../../fonts/Poppins-Medium.ttf')
   })
 
   if (!fontsLoaded) {
@@ -21,8 +22,9 @@ export default function Login() {
 
   return (
     <>
-      <StatusBar style="auto" />
-      <SafeAreaView style={styles.viewp}>
+      <StatusBar barStyle="light-content"/>
+      <Header/>
+      <View style={styles.viewp}>
         <View style={styles.main_container}>
           <View style={styles.top}>
             <Image source={logo} style={styles.logo} resizeMode="contain" />
@@ -84,7 +86,7 @@ export default function Login() {
             </View>
           </View>
         </View>
-      </SafeAreaView>
+      </View>
     </>
   );
 }
@@ -214,7 +216,7 @@ const styles = StyleSheet.create({
       },
 
       signupText: {
-        marginBottom: 30,
+        marginBottom: 50,
       }
     
     });
