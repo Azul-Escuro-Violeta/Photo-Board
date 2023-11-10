@@ -6,7 +6,7 @@ import {
     StatusBar
 } from 'react-native'
 
-const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 40;
+const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 50;
 
 export default function Header() {
     return (

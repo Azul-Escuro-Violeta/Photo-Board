@@ -29,6 +29,50 @@ export default function Menu() {
         <Text style={styles.calendar_text}>Acessar Calendário</Text>
         <AntDesign name="right" size={24} color="white" />
       </TouchableOpacity>
+      <View style={styles.calendar_container}>
+        <View style={styles.day}>
+          <Text style={styles.dayName}>D</Text>
+          <View style={styles.dayNumber_container}>
+            <Text style={styles.dayNumber}>14</Text>
+          </View>
+        </View>
+        <View style={styles.day}>
+          <Text style={styles.dayName}>D</Text>
+          <View style={styles.dayNumber_container}>
+            <Text style={styles.dayNumber}>14</Text>
+          </View>
+        </View>
+        <View style={styles.day}>
+          <Text style={styles.dayName}>D</Text>
+          <View style={styles.dayNumber_container}>
+            <Text style={styles.dayNumber}>14</Text>
+          </View>
+        </View>
+        <View style={styles.day}>
+          <Text style={styles.dayName}>D</Text>
+          <View style={styles.dayNumber_container}>
+            <Text style={styles.dayNumber}>14</Text>
+          </View>
+        </View>
+        <View style={styles.day}>
+          <Text style={styles.dayName}>D</Text>
+          <View style={styles.dayNumber_container}>
+            <Text style={styles.dayNumber}>14</Text>
+          </View>
+        </View>
+        <View style={styles.day}>
+          <Text style={styles.dayName}>D</Text>
+          <View style={styles.dayNumber_container}>
+            <Text style={styles.dayNumber}>14</Text>
+          </View>
+        </View>
+        <View style={styles.day}>
+          <Text style={styles.dayName}>D</Text>
+          <View style={styles.dayNumber_container}>
+            <Text style={styles.dayNumber}>14</Text>
+          </View>
+        </View>
+      </View>
     </View>
     </>
   );
@@ -48,11 +92,50 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
+  calendar_container: {
+    marginTop: 30,
+    height: 80,
+    width: "100%",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+  },
+
   calendar_button: {
     marginTop: 30,
     width: "100%",
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-  }
+  },
+
+  day: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    height: '100%',
+  },
+
+  dayName: {
+    color: '#297447',
+    fontSize: 32,
+    fontFamily: 'Poppins-Bold',
+  },
+
+  dayNumber_container: {
+    backgroundColor: '#262626',
+    width: 40,
+    height: 40,
+    borderRadius: 50,
+    alignItems: 'center',
+    justifyContent: 'center',    
+  },
+
+  dayNumber: {
+    color: 'white',
+    borderRadius: '100%',
+    fontSize: 20,
+    fontFamily: 'Poppins-Medium',
+  },
 });

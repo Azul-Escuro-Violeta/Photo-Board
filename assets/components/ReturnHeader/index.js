@@ -8,7 +8,7 @@ import {
 import {AntDesign} from '@expo/vector-icons'; 
 import {useFonts} from 'expo-font';
 
-const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 35;
+const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 63;
 
 export default function Header() {
 
@@ -24,15 +24,17 @@ export default function Header() {
     
     return (
         <View style={styles.container}>
-            <Text style={styles.returnText}>Voltar</Text>
+            <AntDesign name="left" size={24} color="white" />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'red',
+        paddingLeft: 20,
+        backgroundColor: '#1E1E1E',
         paddingTop: statusBarHeight,
+        flexDirection: 'row',
     },
 
     returnText: {

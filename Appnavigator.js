@@ -43,7 +43,7 @@ function AppNavigator() {
         }}
         name="Menu" 
         component={Menu} />
-        <Stack.Screen 
+        <Stack.Screen
         options={{
           headerTransparent: true,
           title: '',
