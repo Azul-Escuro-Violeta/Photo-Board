@@ -5,6 +5,7 @@ import {useFonts} from 'expo-font';
 import Header from '../../components/Header/index.js'
 import { useNavigation } from '@react-navigation/native';
 
+
 export default function Menu() {
   const navigation = useNavigation();
   const [fontsLoaded] = useFonts({
@@ -37,37 +38,37 @@ export default function Menu() {
           </View>
         </View>
         <View style={styles.day}>
-          <Text style={styles.dayName}>D</Text>
+          <Text style={styles.dayName}>S</Text>
           <View style={styles.dayNumber_container}>
             <Text style={styles.dayNumber}>14</Text>
           </View>
         </View>
         <View style={styles.day}>
-          <Text style={styles.dayName}>D</Text>
+          <Text style={styles.dayName}>T</Text>
           <View style={styles.dayNumber_container}>
             <Text style={styles.dayNumber}>14</Text>
           </View>
         </View>
         <View style={styles.day}>
-          <Text style={styles.dayName}>D</Text>
+          <Text style={styles.dayName}>Q</Text>
           <View style={styles.dayNumber_container}>
             <Text style={styles.dayNumber}>14</Text>
           </View>
         </View>
         <View style={styles.day}>
-          <Text style={styles.dayName}>D</Text>
+          <Text style={styles.dayName}>Q</Text>
           <View style={styles.dayNumber_container}>
             <Text style={styles.dayNumber}>14</Text>
           </View>
         </View>
         <View style={styles.day}>
-          <Text style={styles.dayName}>D</Text>
+          <Text style={styles.dayName}>S</Text>
           <View style={styles.dayNumber_container}>
             <Text style={styles.dayNumber}>14</Text>
           </View>
         </View>
         <View style={styles.day}>
-          <Text style={styles.dayName}>D</Text>
+          <Text style={styles.dayName}>S</Text>
           <View style={styles.dayNumber_container}>
             <Text style={styles.dayNumber}>14</Text>
           </View>
