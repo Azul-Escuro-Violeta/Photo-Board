@@ -6,6 +6,8 @@ import Signup from './assets/src/pages/Signup'; // Importe a tela de Signup
 import ForgotPassword from './assets/src/pages/ForgotPassword';
 import Menu from './assets/src/pages/Menu';
 import Calendar from './assets/src/pages/Calendar';
+import Subjects from './assets/src/pages/Subjects';
+import Camera from './assets/src/pages/Camera';
 
 
 const Stack = createNativeStackNavigator();
@@ -43,7 +45,7 @@ function AppNavigator() {
         }}
         name="Menu" 
         component={Menu} />
-        <Stack.Screen
+      <Stack.Screen
         options={{
           headerTransparent: true,
           title: '',
@@ -51,6 +53,22 @@ function AppNavigator() {
         }}
         name="Calendar" 
         component={Calendar} />
+        <Stack.Screen
+        options={{
+          headerTransparent: true,
+          title: '',
+          headerShown: false,
+        }}
+        name="Subjects" 
+        component={Subjects} />
+        <Stack.Screen
+        options={{
+          headerTransparent: true,
+          title: '',
+          headerShown: false,
+        }}
+        name="Camera" 
+        component={Camera} />
       </Stack.Navigator>
     </NavigationContainer>
   );

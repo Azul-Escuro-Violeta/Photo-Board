@@ -14,6 +14,8 @@ import Header from '../../components/Header/index.js'
 import {useFonts} from 'expo-font';
 import {AntDesign} from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native'; 
+import { Ionicons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 const { width } = Dimensions.get('window');
 
@@ -135,13 +137,6 @@ export default function Menu() {
                               {item.date.getDate()}
                             </Text>
                           </View>
-                          <Text 
-                            style={[
-                            styles.itemtoday,
-                            isActive && { color: '#fff', display: 'flex' },
-                            ]}>
-                              Hoje
-                          </Text>
                         </View>
                       </TouchableWithoutFeedback>
                     );
@@ -151,7 +146,34 @@ export default function Menu() {
             </Swiper>
           </View>
       </View>
+      <View style={styles.alertsContainer}>
+        <View style={styles.alerts}>
+          <View style={styles.alertsTexts}>
+          <Text style={styles.text_alert}>Não há atividades futuras.</Text>
+          </View>
+        </View>
       </View>
+      <View style={styles.bottomButtonsContainer}>
+        <View style={styles.bottomButtons}>
+
+        
+          <TouchableOpacity
+            style={styles.bottomElementsButtons}
+            underlayColor="lightblue"
+            onPress={() => navigation.navigate('Subjects')}
+          >
+              <Ionicons name="library" size={32} color="white" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.bottomElementsButtons}
+            underlayColor="lightblue"
+            onPress={() => navigation.navigate('Camera')}
+          >
+              <Entypo name="camera" size={32} color="white" />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
     </>
   );
 }
@@ -205,10 +227,10 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   swiperContainer: {
-    paddingVertical: 24,
+    paddingVertical: 15,
   },
   picker: {
-    height: 'auto',
+    height: 100,
     maxHeight: 120,
     paddingVertical: 12,
     flexDirection: 'row',
@@ -282,4 +304,58 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     display: 'none',
   },
+
+  alertsContainer: {
+    width: '100%',
+    alignItems: 'center',
+  },
+
+
+  alerts: {
+    backgroundColor: '#C95555',
+    width: '80%',
+    height: 200,
+    borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  alertsTexts: {
+    width: '80%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  text_alert: {
+    fontSize: 24,
+    fontFamily: 'Poppins-Bold',
+    color: 'white',
+    wordWrap: 'break-word',
+    textAlign: 'center',
+  },
+
+  bottomButtons: {
+    width: '80%', 
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+
+  bottomButtonsContainer: {
+    width: '100%', 
+    position: 'absolute',
+    bottom: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  
+  bottomElementsButtons: {
+    width: 60,
+    height: 60,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#297447',
+    borderRadius: "50%"
+  }
+
 });
