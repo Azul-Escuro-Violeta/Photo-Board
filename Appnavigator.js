@@ -8,6 +8,7 @@ import Menu from './assets/src/pages/Menu';
 import Calendar from './assets/src/pages/Calendar';
 import Subjects from './assets/src/pages/Subjects';
 import Camera from './assets/src/pages/Camera';
+import NewActivity from './assets/src/pages/NewActivity';
 
 
 const Stack = createNativeStackNavigator();
@@ -69,6 +70,14 @@ function AppNavigator() {
         }}
         name="Camera" 
         component={Camera} />
+        <Stack.Screen
+        options={{
+          headerTransparent: true,
+          title: '',
+          headerShown: false,
+        }}
+        name="NewActivity" 
+        component={NewActivity} />
       </Stack.Navigator>
     </NavigationContainer>
   );

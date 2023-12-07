@@ -165,6 +165,14 @@ export default function Menu() {
               <Ionicons name="library" size={32} color="white" />
           </TouchableOpacity>
           <TouchableOpacity
+            style={styles.newActictyButtom}
+            underlayColor="lightblue"
+            onPress={() => navigation.navigate('NewActivity')}
+          >
+              <Text style={styles.newactivity}>Nova Atividade</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
             style={styles.bottomElementsButtons}
             underlayColor="lightblue"
             onPress={() => navigation.navigate('Camera')}
@@ -356,6 +364,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#297447',
     borderRadius: "50%"
-  }
+  },
+
+  newactivity: {
+    fontFamily: 'Poppins-Bold',
+    color: 'white',
+    fontSize: 16,
+  },
+
+  newActictyButtom: {
+    height: 60,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#297447',
+    borderRadius: "50%",
+    paddingLeft: 15,
+    paddingRight: 15,
+  },
 
 });

@@ -22,7 +22,7 @@ export default function Login() {
 
   return (
     <>
-      <StatusBar style="auto"/>
+      <StatusBar style="light-content"/>
       <Header/>
       <View style={styles.viewp}>
         <View style={styles.main_container}>
