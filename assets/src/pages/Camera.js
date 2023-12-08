@@ -1,11 +1,9 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {Button, Text, View, TextInput, StyleSheet, TouchableOpacity, Modal, Image} from 'react-native';
 import {AntDesign} from '@expo/vector-icons'; 
-import {useFonts} from 'expo-font';
 import Header from '../../components/Header/index.js'
 import { Camera, CameraType } from 'expo-camera';
 import { useNavigation } from '@react-navigation/native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
 
@@ -55,7 +53,6 @@ export default function Calendar() {
         <TouchableOpacity
             style={styles.return_button}
             underlayColor="lightblue"
-            onPress={() => useNavigation().navigate('Menu')}
           >
             <AntDesign name="left" size={30} color="white" />
           </TouchableOpacity>
@@ -73,7 +70,7 @@ export default function Calendar() {
               : Camera.Constants.Type.back
             );
           }}>
-            <Ionicons name="camera-reverse-outline" size={60} color="black"  style={{fontSiz: 20, marginBottom: 13, color: 'white'}}/>
+            <Ionicons name="camera-reverse-outline" size={60} color="black"  style={{marginBottom: 13, color: 'white'}}/>
           </TouchableOpacity>
           <TouchableOpacity
           style={{

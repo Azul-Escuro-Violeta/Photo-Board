@@ -68,11 +68,6 @@ export default function Calendar() {
                         />
                 </View>
 
-                <Text style={styles.input_text}>Deseja ativar notificações</Text>
-                <View style={styles.input_container}>
-                                                                  
-                </View>
-
                 <TouchableOpacity
                   style={styles.button}
                   underlayColor="lightblue"
