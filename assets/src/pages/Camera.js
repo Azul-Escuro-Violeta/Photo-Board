@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {Button, Text, View, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
+import {Button, Text, View, TextInput, StyleSheet, TouchableOpacity, Modal, Image} from 'react-native';
 import {AntDesign} from '@expo/vector-icons'; 
 import {useFonts} from 'expo-font';
 import Header from '../../components/Header/index.js'
@@ -14,6 +14,8 @@ export default function Calendar() {
   const [type, setType] = useState (Camera.Constants.Type.back);
   const [hasPermission, setHasPermission] = useState(null);
   const [capturedPhoto, setCapturedPhoto] = useState(null);
+  const [open, setOpen] = useState(null);
+
 
   useEffect(() => {
     (async () => {
@@ -34,6 +36,7 @@ export default function Calendar() {
     if(camRef) {
       const data = await camRef.current.takePictureAsync();
       setCapturedPhoto(data.uri)
+      setOpen(true)
       console.log(data);
     } 
   }
@@ -85,6 +88,25 @@ export default function Calendar() {
           </TouchableOpacity>
         </View>
       </Camera>
+      {
+        capturedPhoto && 
+        <Modal 
+        animationType="slide"
+        transparent={false}
+        visible= {open}
+        >
+          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20, backgroundColor: '#1E1E1E'}}>
+            <TouchableOpacity style={{margin:10, alignItems: 'center', justifyContent:'center', flexDirection: 'row'}} onPress={()=> setOpen(false)}>
+              <Text style={{marginRight:5, fontSize: 24, fontFamily: 'Poppins-Regular', color: 'white'}}>Fechar</Text>
+              <Ionicons name="md-close" size={40} color="red" />
+            </TouchableOpacity>
+            <Image
+              style={{width: '100%', height: 500, borderRadius: 20}}
+              source={{uri: capturedPhoto}}
+            />
+          </View>
+        </Modal>
+      }
     </View>
     </>
   );

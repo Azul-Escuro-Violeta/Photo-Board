@@ -338,7 +338,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontFamily: 'Poppins-Bold',
     color: 'white',
-    wordWrap: 'break-word',
     textAlign: 'center',
   },
 
