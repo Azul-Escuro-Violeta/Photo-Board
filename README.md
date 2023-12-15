@@ -14,13 +14,18 @@ O aplicativo "Photo-Board" surge como uma solução inovadora para simplificar e
 
 ## Tecnologias:
 Este projeto foi desenvolvido com as seguintes tecnologias:
-- ✔️ JavaScript
-- ✔️ React Native
-- ✔️ Expo
-- ✔️ Node.js
+
+✔️ JavaScript
+
+✔️ React Native
+
+✔️ Expo
+
+✔️ Node.js
 
 ## Pré-requisitos:
 Para conseguir abrir o aplicativo, você precisará instalar o Expo e a versão mais atualizada do Node.js:
 
 https://nodejs.org/en/
+
 https://docs.expo.dev/get-started/installation/
