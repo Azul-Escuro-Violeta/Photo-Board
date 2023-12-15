@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
   },
   picker: {
-    height: 100,
+    height: 120,
     maxHeight: 120,
     paddingVertical: 12,
     flexDirection: 'row',
@@ -301,8 +301,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#262626',
-    height: 42,
-    width: 42,
+    height: 38,
+    width: 38,
     borderRadius: 50,
   },
 
@@ -357,8 +357,8 @@ const styles = StyleSheet.create({
   },
   
   bottomElementsButtons: {
-    width: 60,
-    height: 60,
+    width: 55,
+    height: 55,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#297447',
@@ -372,7 +372,7 @@ const styles = StyleSheet.create({
   },
 
   newActictyButtom: {
-    height: 60,
+    height: 55,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#297447',

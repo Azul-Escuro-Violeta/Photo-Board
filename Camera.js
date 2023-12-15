@@ -76,7 +76,7 @@ export default function Calendar() {
           style={{
             JustifyContent: 'center',
             alignItems: 'center',
-            bottom: -685,
+            bottom: -645,
           }}
           
           onPress={takePicture}>

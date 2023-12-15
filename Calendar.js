@@ -77,7 +77,7 @@ export default function Calendario() {
     backgroundColor: 'white', borderWidth: 10,
     borderRadius: 20,
     borderColor: '#297447',
-    height: 380,
+    height: 390,
     width: 320,
     color: '#297447',
     fontFamily: 'Poppins-Regular'}}
