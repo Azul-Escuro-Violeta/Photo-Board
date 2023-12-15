@@ -18,3 +18,9 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - ✔️ React Native
 - ✔️ Expo
 - ✔️ Node.js
+
+## Pré-requisitos:
+Para conseguir abrir o aplicativo, você precisará instalar o Expo e a versão mais atualizada do Node.js:
+
+https://nodejs.org/en/
+https://docs.expo.dev/get-started/installation/
